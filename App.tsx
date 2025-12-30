@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 import StrategyView from './components/StrategyView';
 import IterationPlan from './components/IterationPlan';
 import AIChatBot from './components/AIChatBot';
+import TwelveStepGroup from './components/TwelveStepGroup';
 import { STRATEGY_SECTIONS } from './constants';
 
 const App: React.FC = () => {
@@ -11,17 +12,24 @@ const App: React.FC = () => {
 
   const currentSection = STRATEGY_SECTIONS.find(s => s.id === activeSection);
 
+  const renderContent = () => {
+    switch(activeSection) {
+      case 'prd-plan':
+        return <IterationPlan />;
+      case 'twelve-steps':
+        return <TwelveStepGroup />;
+      default:
+        return currentSection ? <StrategyView section={currentSection} /> : (
+          <div className="text-center py-20">
+            <p className="text-slate-400">Section not found.</p>
+          </div>
+        );
+    }
+  };
+
   return (
     <Layout activeSection={activeSection} onNavigate={setActiveSection}>
-      {activeSection === 'prd-plan' ? (
-        <IterationPlan />
-      ) : currentSection ? (
-        <StrategyView section={currentSection} />
-      ) : (
-        <div className="text-center py-20">
-          <p className="text-slate-400">Section not found.</p>
-        </div>
-      )}
+      {renderContent()}
       
       {/* Floating AI ChatBot */}
       <AIChatBot />

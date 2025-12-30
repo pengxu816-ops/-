@@ -21,13 +21,13 @@ const MusicPlayer: React.FC = () => {
       <audio 
         ref={audioRef} 
         loop 
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" 
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" 
       />
       <button 
         onClick={toggleMusic}
-        title={isPlaying ? "暫停音樂" : "播放舒緩音樂"}
+        title={isPlaying ? "暫停冥想音樂" : "開啟冥想音樂"}
         className={`w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-lg ${
-          isPlaying ? 'bg-emerald-500 text-white animate-pulse' : 'bg-slate-700 text-slate-300 hover:text-white'
+          isPlaying ? 'bg-indigo-500 text-white animate-pulse' : 'bg-slate-700 text-slate-300 hover:text-white'
         }`}
       >
         {isPlaying ? (
@@ -41,23 +41,23 @@ const MusicPlayer: React.FC = () => {
         )}
       </button>
       <div className="flex flex-col min-w-0">
-        <span className="text-[10px] font-black text-emerald-400 uppercase tracking-widest flex items-center gap-1">
-          <span className="animate-bounce">🎵</span> 悅動心情
+        <span className="text-[10px] font-black text-indigo-300 uppercase tracking-widest flex items-center gap-1">
+          <span className="animate-pulse">🧘‍♂️</span> 冥想靜心
         </span>
-        <span className="text-[9px] text-slate-300 truncate w-32 font-medium">輕快舒緩 · 專注當下</span>
+        <span className="text-[9px] text-slate-300 truncate w-32 font-medium">空靈放鬆 · 深呼吸</span>
       </div>
       {isPlaying && (
         <div className="flex gap-0.5 h-3 items-end ml-auto">
-          <div className="w-0.5 bg-emerald-400 animate-[music-bar_0.8s_ease-in-out_infinite]"></div>
-          <div className="w-0.5 bg-emerald-400 animate-[music-bar_1.2s_ease-in-out_infinite] delay-100"></div>
-          <div className="w-0.5 bg-emerald-400 animate-[music-bar_0.6s_ease-in-out_infinite] delay-200"></div>
-          <div className="w-0.5 bg-emerald-400 animate-[music-bar_1s_ease-in-out_infinite] delay-300"></div>
+          <div className="w-0.5 bg-indigo-400 animate-[meditation-bar_2s_ease-in-out_infinite]"></div>
+          <div className="w-0.5 bg-indigo-400 animate-[meditation-bar_2.5s_ease-in-out_infinite] delay-200"></div>
+          <div className="w-0.5 bg-indigo-400 animate-[meditation-bar_1.8s_ease-in-out_infinite] delay-500"></div>
+          <div className="w-0.5 bg-indigo-400 animate-[meditation-bar_2.2s_ease-in-out_infinite] delay-700"></div>
         </div>
       )}
       <style>{`
-        @keyframes music-bar {
-          0%, 100% { height: 3px; }
-          50% { height: 11px; }
+        @keyframes meditation-bar {
+          0%, 100% { height: 2px; opacity: 0.3; }
+          50% { height: 10px; opacity: 1; }
         }
       `}</style>
     </div>
