@@ -1,0 +1,8 @@
+{
+  "name": "MindfulLink - Digital Addiction Prevention Platform",
+  "description": "A comprehensive digital health and addiction prevention platform for students, parents, and schools using AI-driven assessment and tiered intervention.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
