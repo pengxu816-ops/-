@@ -5,10 +5,11 @@ import StrategyView from './components/StrategyView';
 import IterationPlan from './components/IterationPlan';
 import AIChatBot from './components/AIChatBot';
 import TwelveStepGroup from './components/TwelveStepGroup';
+import AssessmentCenter from './components/AssessmentCenter';
 import { STRATEGY_SECTIONS } from './constants';
 
 const App: React.FC = () => {
-  const [activeSection, setActiveSection] = useState('user-analysis');
+  const [activeSection, setActiveSection] = useState('assessment-center');
 
   const currentSection = STRATEGY_SECTIONS.find(s => s.id === activeSection);
 
@@ -18,6 +19,8 @@ const App: React.FC = () => {
         return <IterationPlan />;
       case 'twelve-steps':
         return <TwelveStepGroup />;
+      case 'assessment-center':
+        return <AssessmentCenter />;
       default:
         return currentSection ? <StrategyView section={currentSection} /> : (
           <div className="text-center py-20">
@@ -36,7 +39,7 @@ const App: React.FC = () => {
       
       {/* Footer Branding */}
       <footer className="mt-24 pt-8 border-t border-slate-200 text-center">
-        <p className="text-slate-400 text-sm">
+        <p className="text-slate-400 text-sm font-serif">
           &copy; 2025 MindfulLink 產品模型方案. 由教育科技與臨床心理健康合規專家團隊設計.
         </p>
       </footer>

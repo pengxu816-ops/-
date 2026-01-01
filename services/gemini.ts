@@ -34,8 +34,9 @@ const submitAssessmentResultDeclaration: FunctionDeclaration = {
 };
 
 export class GeminiService {
+  // Use process.env.API_KEY directly as per requirements.
   private getAI() {
-    return new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+    return new GoogleGenAI({ apiKey: process.env.API_KEY });
   }
 
   async analyzeAssessment(responses: string) {

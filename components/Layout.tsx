@@ -24,6 +24,7 @@ const Layout: React.FC<LayoutProps> = ({ children, activeSection, onNavigate }) 
         
         <div className="space-y-2">
           {[
+            { id: 'assessment-center', label: '☀️ 智能心晴自測' },
             { id: 'user-analysis', label: '👥 用戶痛點分析' },
             { id: 'positioning', label: '🎯 產品價值主張' },
             { id: 'twelve-steps', label: '👣 匿名康復小組' },
