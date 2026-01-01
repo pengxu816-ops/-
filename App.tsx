@@ -6,6 +6,7 @@ import IterationPlan from './components/IterationPlan';
 import AIChatBot from './components/AIChatBot';
 import TwelveStepGroup from './components/TwelveStepGroup';
 import AssessmentCenter from './components/AssessmentCenter';
+import CaseStories from './components/CaseStories';
 import { STRATEGY_SECTIONS } from './constants';
 
 const App: React.FC = () => {
@@ -21,6 +22,8 @@ const App: React.FC = () => {
         return <TwelveStepGroup />;
       case 'assessment-center':
         return <AssessmentCenter />;
+      case 'case-stories':
+        return <CaseStories />;
       default:
         return currentSection ? <StrategyView section={currentSection} /> : (
           <div className="text-center py-20">

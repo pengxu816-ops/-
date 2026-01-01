@@ -12,7 +12,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children, activeSection, onNavigate }) => {
   return (
     <div className="min-h-screen flex flex-col md:flex-row font-serif">
-      {/* Sidebar Navigation - 外部導航層加粗 */}
+      {/* Sidebar Navigation */}
       <nav className="w-full md:w-80 bg-slate-900 text-white p-6 sticky top-0 h-auto md:h-screen overflow-y-auto z-40">
         <div className="mb-10 flex items-center gap-4 border-b border-slate-800 pb-8">
           <Logo className="w-14 h-14 shrink-0" />
@@ -25,16 +25,13 @@ const Layout: React.FC<LayoutProps> = ({ children, activeSection, onNavigate }) 
         <div className="space-y-2">
           {[
             { id: 'assessment-center', label: '☀️ 智能心晴自測' },
+            { id: 'case-stories', label: '📖 心靈捕手：案例紀實' },
+            { id: 'twelve-steps', label: '👣 匿名康復小組' },
             { id: 'user-analysis', label: '👥 用戶痛點分析' },
             { id: 'positioning', label: '🎯 產品價值主張' },
-            { id: 'twelve-steps', label: '👣 匿名康復小組' },
             { id: 'mvp-features', label: '🛠️ MVP 功能清單' },
             { id: 'user-journey', label: '🛣️ 用戶成長旅程' },
             { id: 'content-system', label: '📚 專業內容體系' },
-            { id: 'metrics', label: '📊 關鍵指標設計' },
-            { id: 'growth', label: '🚀 市場增長策略' },
-            { id: 'compliance', label: '⚖️ 風控與合規性' },
-            { id: 'architecture', label: '🏗️ 技術架構建議' },
             { id: 'prd-plan', label: '📅 迭代計劃 & PRD' }
           ].map((item) => (
             <button
